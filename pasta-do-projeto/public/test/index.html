@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1>formulario com method GET</h1>
+        <form action="/querytojson" method="GET">
+            First name: <input type="text" name="FirstName" value="Michelly"><br>
+            Last name: <input type="text" name="LastName" value="Alves"><br>
+            <input class="btn-click" type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div>
+        <h1>formulario com method POST</h1>
+        <form action="/mirror" method="POST">
+            First name: <input type="text" name="FirstName" value="Wytalo"><br>
+            Last name: <input type="text" name="LastName" value="Adriano"><br>
+            <input class="btn-click" type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="busca">
+        <h1>Busca por animais</h1>
+        <form method="GET" action="/zoo">
+            <label for="q">Buscar:</label>
+            <input type="text" id="q" name="q" value="Lucky">
+            <button class="btn-click" type="submit">Buscar</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
+</body>
+
+</html>
+    
