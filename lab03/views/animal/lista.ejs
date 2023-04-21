@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            Animais
+        </title>
+    </head>
+    <body>
+        <h2>Animais Cadastrados</h2>
+        <table>
+            <tr>
+                <td>Animal</td>
+                <td>Nome</td>
+            </tr>
+            <% for (let i = 0; i < animals.length; i++) { %>
+                <tr>
+                    <td><%= animals[i].animal %></td>
+                    <td><%= animals[i].name %></td>
+                </tr>
+            <% } %>
+            
+        </table>
+    </body>
+</html>
+
+<div class="busca">
+    <h1>Cadastro de Animais</h1>
+    <form action="/zoo" method="POST"><label for="animal">Animal:</label>
+        <select id="animal" name="animal">
+            <option value="DOG">DOG</option>
+            <option value="CAT">CAT</option>
+            <option value="BIRD">BIRD</option>
+        </select>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name"><input type="submit" value="Add">
+    </form>
+</div>

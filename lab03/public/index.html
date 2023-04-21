@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h1>Olá!</h1>
+        <P>Bem vindo a nossa pagina HTML</P>
+        <h4>Clique no <a href="equipe.html">link</a> para ver nossa equipe</h4>
+    </div>
+
+    <div class="busca">
+        <h1>Cadastro de Animais</h1>
+        <form action="/zoo" method="POST"><label for="animal">Animal:</label>
+            <select id="animal" name="animal">
+                <option value="DOG">DOG</option>
+                <option value="CAT">CAT</option>
+                <option value="BIRD">BIRD</option>
+            </select>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name"><input type="submit" value="Add">
+        </form>
+    </div>
+
+    <div>
+        <div class="busca">
+            <h1>Busca por animais</h1>
+            <form method="GET" action="/zoo">
+                <label for="q">Buscar:</label>
+                <input type="text" id="q" name="q" value="">
+                <button class="btn-click" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

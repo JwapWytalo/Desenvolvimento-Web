@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>
+            Filtro
+        </title>
+    </head>
+    <body>
+        <h2>Animais Encontrados</h2>
+        <table>
+            <tr>
+                <td>Animal</td>
+                <td>Nome</td>
+            </tr>
+            <% for (let i = 0; i < animals.length; i++) { %>
+                <tr>
+                    <td><%= animals[i].animal %></td>
+                    <td><%= animals[i].name %></td>
+                </tr>
+            <% } %>
+            
+        </table>
+    </body>
+</html>

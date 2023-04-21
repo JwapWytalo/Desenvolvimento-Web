@@ -1,0 +1,58 @@
+body {
+    text-align: center;
+    background-color: #f1f1db;
+    font-family: initial;
+    letter-spacing: 1px;
+    margin: auto;
+}
+
+.card {
+    background-color: #fe9d97;
+    margin: 50px 34%;
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+
+.card:hover {
+
+    transform: scale(1.1);
+}
+
+table {
+    background-color: #fe9d97;
+    margin: 10px auto 20px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+table a:link,
+a:hover {
+    color: #1d3841;
+    text-decoration: underline;
+    cursor: auto;
+}
+
+ul a:link,
+a:active {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+td {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.lista{
+    text-align: justify;
+    margin: 15px 37%;
+    
+}
+.lista p{
+    margin: 2px;
+}
+.lista ul li {
+    list-style: none;
+    padding: 0;
+    padding-inline-start: 0;
+}
