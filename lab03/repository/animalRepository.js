@@ -1,10 +1,19 @@
-var zoo = [{
-    animal: "DOG",
-    nome: "lucy"
+var zoo = [
+{
+    animal: "CAT",
+    name: "Tom"
 },
 {
     animal: "CAT",
     name: "Hercules"
+},
+{
+    animal: "DOG",
+    name: "Spiff"
+},
+{
+    animal: "DOG",
+    name: "Pluto"
 }
 ]
 

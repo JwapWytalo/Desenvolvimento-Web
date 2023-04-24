@@ -1,26 +1,29 @@
-<html>
-    <head>
-        <title>
-            Animais
-        </title>
-    </head>
-    <body>
-        <h2>Animais Cadastrados</h2>
-        <table>
-            <tr>
-                <td>Animal</td>
-                <td>Nome</td>
-            </tr>
-            <% for (let i = 0; i < animals.length; i++) { %>
-                <tr>
-                    <td><%= animals[i].animal %></td>
-                    <td><%= animals[i].name %></td>
-                </tr>
-            <% } %>
-            
-        </table>
-    </body>
-</html>
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h2>Animais Cadastrados</h2>
+    <table>
+        <tr>
+            <td>Animal</td>
+            <td>Nome</td>
+        </tr>
+        <% for (let i = 0; i < animals.length; i++) { %>
+        <tr>
+            <td><%= animals[i].animal %></td>
+            <td><%= animals[i].name %></td>
+        </tr>
+        <% } %>
+
+    </table>
 
 <div class="busca">
     <h1>Cadastro de Animais</h1>
@@ -34,3 +37,6 @@
         <input type="text" id="name" name="name"><input type="submit" value="Add">
     </form>
 </div>
+    <a href="http://localhost:8080/"> Voltar </a>
+
+</html>
