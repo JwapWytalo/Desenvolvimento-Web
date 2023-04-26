@@ -6,7 +6,7 @@ const categoriaR = (require('./repository/BDCategorias'));
 const produtoR = (require('./repository/BDProdutos'));
 
 const app = express();
-const port = 8080;
+const port = 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
