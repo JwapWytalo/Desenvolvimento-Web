@@ -5,12 +5,11 @@ const zoo = require('./repository/animalRepository');
 
 const { addAnimal, getAnimal } = require('./repository/animalRepository');
 const app = express();
-const port = 8080;
+const port = 3000;
 
-//tentando aplicar css no ejs
 var path = require('path')
-app.use('/views', express.static(path.join(__dirname, "./views")));
 app.set('view engine', 'ejs');
+app.set('views', './views');
 
   
 app.use(express.static("public"));
@@ -29,16 +28,17 @@ app.post('/zoo', (req, res) => {
 });
 
 app.get('/zoo', (req, res) => {
-  const nome = req.query.nome;
+  const nome = req.query.name;
   const tipoAnimal = req.query.animal;
   let animais = zoo.getAnimal();
 
-  if (nome) {
-    animais = animais.filter(animal => animal.name.toLowerCase().includes(nome.toLowerCase()));
+
+  if (tipoAnimal !== 'TODOS') {
+    animais = animais.filter(a => a.animal === tipoAnimal);
   }
 
-  if (tipoAnimal !== 'Todos') {
-    animais = animais.filter(a => a.animal === tipoAnimal);
+  if (nome) {
+    animais = animais.filter(a => a.name.toLowerCase().includes(nome.toLowerCase()));
   }
 
   res.render('animal/busca.ejs', { animals: animais });
