@@ -1,11 +1,12 @@
-const {json} = require('express');
+const { json } = require('express');
 const express = require('express');
 const { addCategoria, getCategoria } = require('./repository/BDCategorias');
+const { getProdutos, addProdutos } = require('./repository/BDProdutos');
 const categoriaR = (require('./repository/BDCategorias'));
+const produtoR = (require('./repository/BDProdutos'));
 
 const app = express();
 const port = 8080;
-
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -16,8 +17,14 @@ app.use(express.urlencoded({
   extended: true
 }));
 
+let produtoId = 1;
+
 app.get('/categorias', (req, res) => {
   res.render('categorias', {categorias: getCategoria()});
+});
+
+app.get('/produtos', (req, res) => {
+  res.render('produtos', {produtos: getProdutos()});
 });
 
 app.get('/categoria-deletar', (req, res) => {
@@ -26,20 +33,37 @@ app.get('/categoria-deletar', (req, res) => {
   res.redirect('/categorias');
 });
 
-
 app.post('/categoria-salvar', (req, res) => {
-    const newCategoria = {
-      chave : req.body.chave,
-      valor : req.body.valor
-    };
-    addCategoria(newCategoria);
-    res.redirect('/categorias');
+  const newCategoria = {
+    chave : req.body.chave,
+    valor : req.body.valor
+  };
+  addCategoria(newCategoria);
+  res.redirect('/categorias');
 });
 
-app.get('/produto-editar ', (req, res) => {
-/**que recebe o id do produto a ser editado como parâmetro de consulta 
- * (ex: /produto-editar?id=10 para editar o produto de ID 10)
-/*/
+app.get('/cadastrarProduto', (req, res) => {
+  res.render('cadastrarProduto', {categorias: getCategoria()});
+});
+
+app.post('/cadastrar-produto', (req, res) => {
+  const newProduto = {
+    id : produtoId,
+    nome : req.body.nome,
+    preco: req.body.preco,
+    categoria : req.body.categoria,
+    descricao : req.body.descricao
+  };
+  produtoId++;
+  addProdutos(newProduto);
+  res.redirect('/produtos');
+});
+
+app.get('/produto-editar', (req, res) => {
+  const produtoId = parseInt(req.query.id);
+  const produto = produtoR.getProdutoId(produtoId);
+  res.render('editarProduto', {produto: produto});
+  res.redirect('/produtos');
 });
 
 app.listen(port, () => {

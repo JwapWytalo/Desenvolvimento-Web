@@ -1,6 +1,4 @@
-var categorias = [
-
-]
+var categorias = []
 
 function addCategoria(categoria){
     categorias.push(categoria);
