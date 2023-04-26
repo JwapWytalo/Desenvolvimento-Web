@@ -42,6 +42,8 @@ app.post('/categoria-salvar', (req, res) => {
   res.redirect('/categorias');
 });
 
+  //produtos
+
 app.get('/cadastrarProduto', (req, res) => {
   res.render('cadastrarProduto', {categorias: getCategoria()});
 });
@@ -62,7 +64,18 @@ app.post('/cadastrar-produto', (req, res) => {
 app.get('/produto-editar', (req, res) => {
   const produtoId = parseInt(req.query.id);
   const produto = produtoR.getProdutoId(produtoId);
-  res.render('editarProduto', {produto: produto});
+  res.render('editarProduto', { produto: produto, categorias: categoriaR.getCategoria() });
+});
+
+app.post('/produto-editar', (req, res) => {
+  const editedProduto = {
+    id: parseInt(req.body.id),
+    nome: req.body.nome,
+    preco: req.body.preco,
+    categoria: req.body.categoria,
+    descricao: req.body.descricao
+  };
+  produtoR.editarProduto(editedProduto);
   res.redirect('/produtos');
 });
 
