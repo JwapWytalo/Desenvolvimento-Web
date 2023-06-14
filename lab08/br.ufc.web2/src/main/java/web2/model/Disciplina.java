@@ -1,8 +1,8 @@
 package web2.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Disciplina {
@@ -12,8 +12,6 @@ public class Disciplina {
 	private int codigo;
 	private String nome;
 	private int creditos;
-	
-	
 	
 	public int getCodigo() {
 		return codigo;
